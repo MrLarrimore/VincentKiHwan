@@ -12,6 +12,7 @@ and open the template in the editor.
     <body>
         <?php
         // put your code here
+        //Follow me on IG @VincentCLonero, Twitter @BigBallaVince, and Snapchat @ Winikeneke
         ?>
     </body>
 </html>

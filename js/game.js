@@ -33,7 +33,6 @@ var game = {
                 gameTimerManager: "",
                 heroDeathManager: "",
                 player: "",
-                minimapManager: "",
                 spearTimer: 15,
                 exp: 0,
                 gold: 0,
@@ -101,13 +100,10 @@ var game = {
                 me.pool.register("EnemyCreep", game.EnemyCreep, true);
                 me.pool.register("PlayerCreep", game.PlayerCreep, true);
                 me.pool.register("GameTimerManager", game.GameTimerManager); 
-                me.pool.register("GameMinimapManager", game.GameMinimapManager, true);                
                 me.pool.register("HeroDeathManager", game.HeroDeathManager);                
                 me.pool.register("ExperienceManager", game.ExperienceManager);              
                 me.pool.register("SpendGold", game.SpendGold);              
                 me.pool.register("spear", game.SpearThrow);              
-                me.pool.register("minimap", game.MiniMap);            
-                me.pool.register("miniplayer", game.MiniPlayerLocation);
                 me.pool.register("pause", game.Pause);
                 me.pool.register("EnemyEntity", game.EnemyEntity, true);
                 me.pool.register("Jump", game.Jump, true);
@@ -120,6 +116,6 @@ var game = {
 		me.state.set(me.state.NEW, new game.NewProfile());
 
 		// Start the game.
-		me.state.change(me.state.MENU);
+		me.state.change(me.state.PLAY);
 	}
 };

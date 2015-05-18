@@ -6,7 +6,7 @@ game.resources = [
 	 */
 	 {name: "background-tiles", type:"image", src: "data/img/background-tiles.png"},
 	 {name: "meta-tiles", type:"image", src: "data/img/meta-tiles.png"},
-         {name: "player", type:"image", src: "data/img/orcSpear.png"},
+         {name: "player", type:"image", src: "data/img/level1ani.png"},
          {name: "tower", type:"image", src: "data/img/tower_round.svg.png"},      
          {name: "creep1", type:"image", src: "data/img/brainmonster.png"},    
          {name: "creep2", type:"image", src: "data/img/gloop.png"},         
@@ -16,7 +16,6 @@ game.resources = [
          {name: "load-screen", type:"image", src: "data/img/loadpic.png"},   
          {name: "new-screen", type:"image", src: "data/img/newpic.png"},  
          {name: "spear", type:"image", src: "data/img/spear.png"},
-         {name: "minimap", type:"image", src: "data/img/minimap.png"},
          {name: "black-screen", type:"image", src: "data/img/blackBackground.png"},
          {name: "enemyHero", type:"image", src: "data/img/elf.png"},
          {name: "jump", type:"image", src: "data/img/jump.png"},

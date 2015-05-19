@@ -1,5 +1,6 @@
 <?php
 
+//set up database... private means it only works in this page, whereas public can work in other pages
 class Database {
 
     private $connection;
@@ -14,7 +15,7 @@ class Database {
         $this->username = $username;
         $this->password = $password;
         $this->database = $database;
-
+        
         $this->connection = new mysqli($host, $username, $password);
 
         if ($this->connection->connect_error) {
@@ -27,10 +28,9 @@ class Database {
             $query = $this->connection->query("CREATE DATABASE $database");
 
             if ($query) {
-                echo "<p>Successsfully created database: " . $database . "</p>";
+                echo "<p>Successfully created database: " . $database . "</p>";
             }
         } else {
-            echo "<p>Database has already exists.</p>";
         }
     }
 
@@ -38,12 +38,12 @@ class Database {
         $this->connection = new mysqli($this->host, $this->username, $this->password, $this->database);
 
         if ($this->connection->connect_error) {
-            die("<p>Error: " . $this->connection->connect_error . "</p>");
+            die("<p>Error: " . $connection->connect_error . "</p>");
         }
     }
 
     public function closeConnection() {
-        if (isset($this->connecion)) {
+        if (isset($this->connection)) {
             $this->connection->close();
         }
     }

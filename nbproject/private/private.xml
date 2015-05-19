@@ -2,6 +2,20 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
         <group/>
+=======
+        <group>
+            <file>file:/C:/xampp/htdocs/VincentKiHwan/js/entities/entities.js</file>
+            <file>file:/C:/xampp/htdocs/VincentKiHwan/js/gamemanagers/Pause.js</file>
+            <file>file:/C:/xampp/htdocs/VincentKiHwan/js/resources.js</file>
+            <file>file:/C:/xampp/htdocs/VincentKiHwan/js/screens/title.js</file>
+            <file>file:/C:/xampp/htdocs/VincentKiHwan/js/screens/play.js</file>
+            <file>file:/C:/xampp/htdocs/VincentKiHwan/js/gamemanagers/HeroDeathManager.js</file>
+            <file>file:/C:/xampp/htdocs/VincentKiHwan/js/game.js</file>
+            <file>file:/C:/xampp/htdocs/VincentKiHwan/index.php</file>
+            <file>file:/C:/xampp/htdocs/VincentKiHwan/js/gamemanagers/GameTimeManager.js</file>
+        </group>
+>>>>>>> 6d03f25d382e85c8ff292e6451e9fa055bda24bd
     </open-files>
 </project-private>

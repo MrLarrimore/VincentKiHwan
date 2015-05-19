@@ -32,16 +32,28 @@ body {
 	-ms-interpolation-mode: nearest-neighbor;
 }
 
+<<<<<<< HEAD
 #input{
+=======
+#input {
+>>>>>>> 6d03f25d382e85c8ff292e6451e9fa055bda24bd
     display: block;
     text-align: center;
     visibility: hidden;
 }
 
+<<<<<<< HEAD
 #load{
     visibility: hidden;
 }
 
 #register{
+=======
+#load {
+    visibility: hidden;
+}
+
+#register {
+>>>>>>> 6d03f25d382e85c8ff292e6451e9fa055bda24bd
     visibility: hidden;
 }

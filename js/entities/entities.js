@@ -5,7 +5,7 @@ game.PlayerEntity = me.Entity.extend({
         this.setAttribute();
         this.type = "PlayerEntity";
         this.setFlags();
-//fixing the camera on the player
+        //fixing the camera on the player
         me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
 
         this.addAnimation();

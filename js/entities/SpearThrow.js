@@ -1,13 +1,13 @@
 game.SpearThrow = me.Entity.extend({
     init: function(x, y, settings, facing) {
         this._super(me.Entity, 'init', [x, y, {
-                image: "spear",
-                width: 48,
-                height: 48,
-                spritewidth: "48",
-                spriteheight: "48",
+                image: "playerX",
+                width: 64,
+                height: 64,
+                spritewidth: "64",
+                spriteheight: "64",
                 getShape: function() {
-                    return(new me.Rect(0, 0, 48, 48)).toPolygon();
+                    return(new me.Rect(0, 0, 64, 64)).toPolygon();
                 }
             }]);
         this.alwaysUpdate = true;

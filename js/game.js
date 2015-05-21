@@ -33,7 +33,7 @@ var game = {
                 gameTimerManager: "",
                 heroDeathManager: "",
                 player: "",
-                spearTimer: 15,
+                spearTimer: 0,
                 exp: 0,
                 gold: 0,
                 ability1: 0,

@@ -1,9 +1,17 @@
 game.PlayerEntity = me.Entity.extend({
     init: function(x, y, settings) {
-        this.setSuper(x, y);
+        this.level1 = true;
+        this.level2 = false;
+        if(this.level1 === true && this.level2 === false) {
+            this.setSuper(x, y);
+        }
+        if(this.level2 === true && this.level1 === false) {
+            this.setSuper2(x, y);
+        }
         this.setPlayerTimers();
         this.setAttribute();
         this.type = "PlayerEntity";
+
         this.setFlags();
         //fixing the camera on the player
         me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
@@ -12,11 +20,24 @@ game.PlayerEntity = me.Entity.extend({
 
         this.renderable.setCurrentAnimation("idle");
     },
-    
     setSuper: function(x, y) {
         //loading player with 64*64 size
         this._super(me.Entity, 'init', [x, y, {
                 image: "player",
+                width: 64,
+                height: 64,
+                spritewidth: "64",
+                spriteheight: "64",
+                getShape: function() {
+                    return(new me.Rect(0, 0, 64, 64)).toPolygon();
+                }
+            }]);
+
+    },
+    setSuper2: function(x, y) {
+        //loading player with 64*64 size
+        this._super(me.Entity, 'init', [x, y, {
+                image: "playerX",
                 width: 64,
                 height: 64,
                 spritewidth: "64",
@@ -56,6 +77,7 @@ game.PlayerEntity = me.Entity.extend({
 
     },
     update: function(delta) {
+        console.log(this.level2);
         this.now = new Date().getTime();
         this.dead = this.checkIfDead();
         this.checkKeyPressesAndMove();
@@ -102,6 +124,18 @@ game.PlayerEntity = me.Entity.extend({
                 me.audio.play("jump-sound");
             }
         }
+        
+        if (me.input.isKeyPressed("attack")) {
+            if(this.level1 === true && this.level2 === false){
+                this.level2 = true;
+                this.level1 = false;
+            }else if(this.level2 === true && this.level1 === false){
+                this.level2 = false;
+                this.level1 = true;
+            
+            }
+            }
+        
 
         this.attacking = me.input.isKeyPressed("attack");
     },

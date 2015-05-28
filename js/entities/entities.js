@@ -7,6 +7,7 @@ game.PlayerEntity = me.Entity.extend({
             this.setSuper(x, y);
         }
         if(this.level2 === true && this.level1 === false) {
+            
             this.setSuper2(x, y);
         }
         this.setPlayerTimers();
@@ -298,4 +299,85 @@ game.PlayerEntity = me.Entity.extend({
         }
         response.b.loseHealth(game.data.playerAttack);
     }
+<<<<<<< HEAD
+=======
+});
+
+//drawing monster
+game.Monster1 = me.Entity.extend({
+    init: function(x, y, settings) {
+        this._super(me.Entity, 'init', [x, y, {
+                image: "slime",
+                spritewidth: "64",
+                spriteheight: "64",
+                width: 64,
+                height: 64,
+                getShape: function() {
+                    return (new me.Rect(0, 0, 64, 64)).toPolygon();
+                }
+            }]);
+//making monster walk from starX to endX
+        this.spritewidth = 64;
+        var width = settings.width;
+        x = this.pos.x;
+        this.startX = x;
+        this.endX = x + width - this.spritewidth;
+        this.pos.x = x + width - this.spritewidth;
+        this.updateBounds();
+
+        this.alwaysUpdate = true;
+
+        this.walkLeft = false;
+        this.alive = true;
+        this.type = "monster1";
+//animation for skeleton
+        this.renderable.addAnimation("run", [144, 145, 146], 80);
+        this.renderable.setCurrentAnimation("run");
+
+        this.body.setVelocity(3, 6);
+    },
+    //enabling skeleton to move left and right
+    update: function(delta) {
+        this.body.update(delta);
+        me.collision.check(this, true, this.collideHandler.bind(this), true);
+
+        if (this.alive) {
+            if (this.walkLeft && this.pos.x <= this.startX) {
+                this.walkLeft = false;
+            } else if (!this.walkLeft && this.pos.x >= this.endX) {
+                this.walkLeft = true;
+            }
+            this.flipX(this.walkLeft);
+            this.body.vel.x += (this.walkLeft) ? -this.body.accel.x * me.timer.tick : this.body.accel.x * me.timer.tick;
+        } else {
+            me.game.world.removeChild(this);
+        }
+
+        this._super(me.Entity, "update", [delta]);
+        return true;
+    },
+    collideHandler: function() {
+
+    }
+
+});
+
+game.Armor1 = me.Entity.extend({
+    init: function(x, y, settings) {
+        this._super(me.Entity, 'init', [x, y, {
+                image: "armor1",
+                spritewidth: "64",
+                spriteheight: "64",
+                width: 64,
+                height: 64,
+                getShape: function() {
+                    return (new me.Rect(0, 0, 64, 64)).toPolygon();
+                }
+            }]);
+
+        me.collision.check(this);
+        this.type = "armor1";
+    }
+
+>>>>>>> 5b61c4a10a2b48f520449b4a4d39bdae9b0f22c7
 });

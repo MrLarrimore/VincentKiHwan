@@ -1,4 +1,5 @@
 <?php
+
    require_once(__DIR__ . "/../model/config.php");
    //creating users. the characters of username, email, password, and salt are less than 30, 50, 128, and 128, respectively.
     $query = $_SESSION["connection"]->query("CREATE TABLE users ("
@@ -13,4 +14,3 @@
            . "exp3 int(4), "
            . "exp4 int(4), "
            . "PRIMARY KEY (id))");
-  

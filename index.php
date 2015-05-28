@@ -64,7 +64,8 @@
                 <script type="text/javascript" src="js/entities/SpearThrow.js"></script>
                 <script type="text/javascript" src="js/entities/EnemyEntity.js"></script>
                 <script type="text/javascript" src="js/entities/Jump.js"></script>
-
+                
+                <script type="text/javascript" src="js/screens/select.js"></script>
 		<script type="text/javascript" src="js/screens/title.js"></script>
 		<script type="text/javascript" src="js/screens/play.js"></script>
            	<script type="text/javascript" src="js/screens/spendExp.js"></script>

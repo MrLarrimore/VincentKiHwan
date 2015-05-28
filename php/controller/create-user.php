@@ -1,5 +1,6 @@
 <?php
     require_once(__DIR__ . "/../model/config.php");
+
     
     //fliter the inputs that use put... they should be proper for each category.
     $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_STRING);
@@ -16,6 +17,7 @@
             . "username = '$username',"
             . "password = '$hashedPassword',"
             . "salt = '$salt',"
+
             . "exp = 0, "
             . "exp1 = 0, "
             . "exp2 = 0, "
@@ -23,8 +25,8 @@
             . "exp4 = 0");
     
     $_SESSION["name"] = $username;
-         
 
+    
     if($query){        
          //need this for Ajax on index.php 
          echo "true";

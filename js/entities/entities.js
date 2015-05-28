@@ -1,4 +1,5 @@
 game.PlayerEntity = me.Entity.extend({
+
     init: function(x, y, settings) {
         this.level1 = true;
         this.level2 = false;
@@ -52,6 +53,7 @@ game.PlayerEntity = me.Entity.extend({
     setPlayerTimers: function() {
         this.now = new Date().getTime();
         this.lastHit = this.now;
+        
         this.lastSpear = this.now;
         this.lastEat = this.now;
         this.lastSpeed = this.now;
@@ -75,7 +77,6 @@ game.PlayerEntity = me.Entity.extend({
         this.renderable.addAnimation("idle", [78]);
         this.renderable.addAnimation("walk", [117, 118, 119, 120, 121, 122, 123, 124, 125], 80);
         this.renderable.addAnimation("attack", [65, 66, 67, 68, 69, 70, 71, 72], 80);
-
     },
     update: function(delta) {
         console.log(this.level2);
@@ -88,6 +89,7 @@ game.PlayerEntity = me.Entity.extend({
             this.superfast = false;
             this.body.setVelocity(game.data.playerMoveSpeed, 20);
         }
+        
         me.collision.check(this, true, this.collideHandler.bind(this), true);
         this.body.update(delta);
         this._super(me.Entity, "update", [delta]);
@@ -97,6 +99,7 @@ game.PlayerEntity = me.Entity.extend({
         if (this.health <= 0) {
             return true;
         }
+
     },
     checkKeyPressesAndMove: function() {
 
@@ -216,10 +219,12 @@ game.PlayerEntity = me.Entity.extend({
         var xdif = this.pos.x - response.b.pos.x;
 
         //standing on the enemy base
+
         if (ydif < -40 && xdif < 70 && xdif > -35) {
             this.body.falling = false;
             this.body.vel.y = -1;
         }
+
         //can't go through the base in either way
         else if (xdif > -35 && this.facing === 'right' && (xdif < 0)) {
             this.body.vel.x = 0;
@@ -234,6 +239,7 @@ game.PlayerEntity = me.Entity.extend({
             response.b.loseHealth(game.data.playerAttack);
         }
     },
+
     collideWithEnemyCreep: function(response) {
         var ydif = this.pos.y - response.b.pos.y;
         var xdif = this.pos.x - response.b.pos.x;
@@ -263,6 +269,7 @@ game.PlayerEntity = me.Entity.extend({
     },
     stopMovement: function(xdif) {
         if (xdif > 0) {
+
             if (this.facing === "left") {
                 this.body.vel.x = 0;
             }
@@ -292,6 +299,8 @@ game.PlayerEntity = me.Entity.extend({
         }
         response.b.loseHealth(game.data.playerAttack);
     }
+<<<<<<< HEAD
+=======
 });
 
 //drawing monster
@@ -370,4 +379,5 @@ game.Armor1 = me.Entity.extend({
         this.type = "armor1";
     }
 
+>>>>>>> 5b61c4a10a2b48f520449b4a4d39bdae9b0f22c7
 });

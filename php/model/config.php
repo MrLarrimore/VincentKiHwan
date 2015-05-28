@@ -1,10 +1,11 @@
 <?php
+
 //config is like the nexus which enables pages to connect with the database
     require_once(__DIR__ . "/database.php");
     session_start();
     session_regenerate_id(true);
 
-    $path = "/ChongKAwesomenauts/php/";
+    $path = "/RPG/php/";
 
     $host = "localhost";
     $username = "root";
@@ -18,3 +19,4 @@
     }
     
     
+

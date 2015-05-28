@@ -2,14 +2,15 @@ game.EnemyBaseEntity = me.Entity.extend({
     init: function(x, y, settings) {
         this._super(me.Entity, 'init', [x, y, {
                 image: "tower",
-                width: 100,
                 height: 100,
-                spritewidth: "100",
+                width: 100,
                 spriteheight: "100",
+                spritewidth: "100",
                 getShape: function() {
-                    return(new me.Rect(0, 0, 100, 70)).toPolygon();
+                    return(new me.Rect(0, 0, 100, 60)).toPolygon();
                 }
-            }]);
+                }]);
+            
         this.broken = false;
         this.health = game.data.enemyBaseHealth;
         this.alwaysUpdate = true;
@@ -29,7 +30,6 @@ game.EnemyBaseEntity = me.Entity.extend({
             this.renderable.setCurrentAnimation("broken");
         }
         this.body.update(delta);
-
         this._super(me.Entity, "update", [delta]);
         return true;
     },

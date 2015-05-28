@@ -1,8 +1,7 @@
 
 /* Game namespace */
 var game = {
-
-	// an object where to store game information
+// an object where to store game information
 	data : {
 		// score
                 //set global variables
@@ -55,7 +54,8 @@ var game = {
                 miniPlayer: "",
                 pause:"",
                 jump:"",
-	},
+                select: "",
+            },
 	
 	
 	// Run on page load.
@@ -76,6 +76,7 @@ var game = {
         me.state.SPENDEXP = 112;
         me.state.LOAD = 113;
         me.state.NEW = 114;
+        me.state.SELECT = 115;
         
 
 	// Initialize the audio.
@@ -114,8 +115,10 @@ var game = {
 		me.state.set(me.state.SPENDEXP, new game.SpendExp());
 		me.state.set(me.state.LOAD, new game.LoadProfile());
 		me.state.set(me.state.NEW, new game.NewProfile());
+                me.state.set(me.state.SELECT, new game.Select());
 
 		// Start the game.
-		me.state.change(me.state.PLAY);
+		me.state.change(me.state.SELECT);
 	}
+
 };
